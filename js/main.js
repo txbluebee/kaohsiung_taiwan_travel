@@ -48,7 +48,7 @@ function displayZone(zoneName){
                       data[i].Add +
                   '</li>'+
                   '<li>'+
-                      '<img src="./img/icons_phone.png"> ' +
+                      '<img src="./img/icons_phone.png" style="margin-right:10px; padding-left: 2px;"> ' +
                       data[i].Tel +
                   '</li>'+
                 '</ul>' +
@@ -73,5 +73,16 @@ selectZone.addEventListener('change', updateZone);
 
 function updateZone(e){
   var zoneName = e.target.value;
+  displayZone(zoneName);
+}
+
+// Change Travel Zone by Click Button
+
+var clickableZone = document.querySelector('.clickableZone');
+
+clickableZone.addEventListener('click', displayClickZone);
+
+function displayClickZone(e){
+  var zoneName = e.target.innerText;
   displayZone(zoneName);
 }

@@ -8,6 +8,7 @@ body {
 .main {
   max-width: 1024px;
   margin: 0 auto;
+  background: #F9F9F9;
 }
 
 #header {
@@ -65,7 +66,7 @@ body {
     h2 {
       font-size: 1.2rem;
       font-weight: bold;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.7rem;
     }
     ul {
       display: flex;
@@ -98,8 +99,10 @@ body {
 }
 
 #content {
-  padding: 7rem 2rem;
+  padding: 7rem 2rem 2rem;
   .travelZone{
+    border-top: 2px dashed $blue;
+    padding-top: 2rem;
     h3 {
       text-align: center;
       font-size: 36px;
@@ -139,15 +142,16 @@ body {
         .cardBody {
           position: relative;
           padding: 1rem;
+          background-color: #fff;
           ul {
             padding-left: 1rem;
             li {
-              margin-bottom: 5px;
+              margin-bottom: 7px;
               display: flex;
               align-items: center;
               letter-spacing: 1px;
               line-height: 1.2;
-
+              font-weight: 500;
               img{
                 margin-right: 0.5rem;
               }
@@ -166,5 +170,21 @@ body {
         }
       }
     }
+  }
+}
+
+#footer {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255,255,255,0.8);
+  background-color: $blue;
+  p{
+    margin-bottom: 0.6rem;
+  }
+  span{
+    color: $yellow;
   }
 }
