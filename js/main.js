@@ -28,8 +28,8 @@ function displayZone(zoneName){
   var zoneTravelData = '';
   for (var i=0;i<data.length;i++){
     if (data[i].Zone === zoneName){
-      if (!data[i].ticketInfo){
-        data[i].ticketInfo = '也許免費';
+      if (!data[i].Ticketinfo ){
+        data[i].Ticketinfo = '也許免費';
       };
       zoneTravelData +=
           '<div class="travelCard">'+
@@ -54,7 +54,7 @@ function displayZone(zoneName){
                 '</ul>' +
                 '<div class="ticketInfo">'+
                   '<img src="./img/icons_tag.png">' +
-                  data[i].ticketInfo +
+                  data[i].Ticketinfo +
                 '</div>'+
             '</div>'+
           '</div>'
