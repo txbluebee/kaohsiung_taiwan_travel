@@ -22,15 +22,14 @@ selectZone.addEventListener('change', updateZone);
 
 var travelContent = document.querySelector('.travelSpots');
 var zoneHead = document.querySelector('.zoneHead');
-var defaultZone = '三民區';
 
-function updateZone(zoneName){
-  zoneHead.contentText = zoneName;
+function displayZone(zoneName){
+  zoneHead.innerHTML = zoneName;
   var zoneTravelData = '';
   for (var i=0;i<data.length;i++){
     if (data[i].Zone === zoneName){
       if (!data[i].ticketInfo){
-        data[i].ticketInfo = '';
+        data[i].ticketInfo = '也許免費';
       };
       zoneTravelData +=
           '<div class="travelCard">'+
@@ -38,18 +37,18 @@ function updateZone(zoneName){
               '<h6>' + data[i].Name + '</h6>' +
               '<span>' + data[i].Zone + '<span>' +
             '</div>'+
-            '<div class="card-body">'+
+            '<div class="cardBody">'+
                 '<ul>'+
                   '<li>'+
-                      '<img src="./img/icons_clock.png">' +
+                      '<img src="./img/icons_clock.png"> ' +
                       data[i].Opentime +
                   '</li>'+
                   '<li>'+
-                      '<img src="./img/icons_pin.png">' +
+                      '<img src="./img/icons_pin.png"> ' +
                       data[i].Add +
                   '</li>'+
                   '<li>'+
-                      '<img src="./img/icons_phone.png">' +
+                      '<img src="./img/icons_phone.png"> ' +
                       data[i].Tel +
                   '</li>'+
                 '</ul>' +
@@ -64,5 +63,15 @@ function updateZone(zoneName){
   }
   travelContent.innerHTML = zoneTravelData;
 }
+// Default Travel Zone
+var defaultZone = '三民區';
+displayZone(defaultZone);
 
-updateZone(defaultZone);
+// Change Travel Zone by Select Menu
+
+selectZone.addEventListener('change', updateZone);
+
+function updateZone(e){
+  var zoneName = e.target.value;
+  displayZone(zoneName);
+}
