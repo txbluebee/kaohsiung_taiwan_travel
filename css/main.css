@@ -198,7 +198,8 @@ body {
         #content .travelZone .travelSpots .travelCard .cardBody {
           position: relative;
           padding: 1rem;
-          background-color: #fff; }
+          background-color: #fff;
+          min-height: 130px; }
           #content .travelZone .travelSpots .travelCard .cardBody ul {
             padding-left: 1rem; }
             #content .travelZone .travelSpots .travelCard .cardBody ul li {
